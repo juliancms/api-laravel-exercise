@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserSendRequestNumber;
 use App\Models\Bigbang;
 use Illuminate\Http\Request;
 use App\Http\Requests\BigbangRequest;
@@ -38,72 +39,8 @@ class BigbangController extends Controller
             }
         }
 
+        event(new UserSendRequestNumber($number));
+
         return new BigbangResource($numbers);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Bigbang  $bigbang
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Bigbang $bigbang)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Bigbang  $bigbang
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Bigbang $bigbang)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bigbang  $bigbang
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Bigbang $bigbang)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Bigbang  $bigbang
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Bigbang $bigbang)
-    {
-        //
     }
 }

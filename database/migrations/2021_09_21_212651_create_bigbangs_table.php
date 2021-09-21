@@ -15,6 +15,7 @@ class CreateBigbangsTable extends Migration
     {
         Schema::create('bigbangs', function (Blueprint $table) {
             $table->id();
+            $table->string('number');
             $table->timestamps();
         });
     }
