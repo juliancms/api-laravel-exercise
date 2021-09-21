@@ -44,7 +44,7 @@ class NumberConversor
     public function isMultipleOf($n): ?string
     {
         if ($n % 3 === 0) {
-            return "BigBang";
+            return "Big";
         };
 
         if ($n % 5 === 0) {
